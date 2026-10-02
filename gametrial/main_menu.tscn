@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://bkvgl7d0b38fo"]
+
+[ext_resource type="Script" uid="uid://b5wwkq3ttfjwu" path="res://gametrial/MainMenu.cs" id="1_3x1rd"]
+[ext_resource type="Texture2D" uid="uid://cmwrun1ro8lex" path="res://ASSETS/BG SHET/Grid3.png" id="1_xu8j6"]
+[ext_resource type="FontFile" uid="uid://ihpgvqteylba" path="res://ASSETS/webfontkit-BoldPixels/boldpixels.ttf" id="2_vm8mc"]
+[ext_resource type="Texture2D" uid="uid://b24spmkbghw45" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Buttons/Button_White (4).png" id="3_3x1rd"]
+[ext_resource type="Texture2D" uid="uid://bvx5qfyfws15s" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Buttons/Button_White (5).png" id="4_p8oup"]
+[ext_resource type="Texture2D" uid="uid://bnpfwqt0rvpn3" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Buttons/Button_White (8).png" id="5_s13yk"]
+[ext_resource type="Texture2D" uid="uid://c27vm3op3tk51" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Buttons/Button_White_Outline (1).png" id="6_dlogw"]
+[ext_resource type="Texture2D" uid="uid://1wfp50yph30n" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Icons/Icon_Dark (1).png" id="7_gqrrf"]
+
+[node name="MainMenu" type="Control" unique_id=2001955834]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3x1rd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=820542308]
+position = Vector2(577.00006, 324)
+scale = Vector2(1.2755555, 1.0766667)
+texture = ExtResource("1_xu8j6")
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="." unique_id=885755085]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -35.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_vm8mc")
+theme_override_font_sizes/font_size = 80
+text = "PING PONG PIXEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Play" type="TextureButton" parent="." unique_id=1912758687]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33400002
+anchor_top = 0.69000006
+anchor_right = 0.65400004
+anchor_bottom = 0.84300005
+offset_left = -4.7680664
+offset_top = -2.1200256
+offset_right = -5.408081
+offset_bottom = -2.264038
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_3x1rd")
+texture_pressed = ExtResource("4_p8oup")
+
+[node name="Label" type="Label" parent="Play" unique_id=1150103261]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_vm8mc")
+theme_override_font_sizes/font_size = 70
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Exit" type="TextureButton" parent="." unique_id=754430812]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_bottom = 99.0
+grow_horizontal = 0
+texture_normal = ExtResource("5_s13yk")
+texture_pressed = ExtResource("6_dlogw")
+
+[node name="TextureRect" type="TextureRect" parent="Exit" unique_id=1203332736]
+texture_filter = 1
+layout_mode = 1
+offset_left = 19.0
+offset_top = 13.0
+offset_right = 76.0
+offset_bottom = 71.0
+texture = ExtResource("7_gqrrf")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Play" to="." method="OnPlayButtonPressed"]
+[connection signal="pressed" from="Exit" to="." method="OnExitButtonPressed"]

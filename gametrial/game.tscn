@@ -1,0 +1,363 @@
+[gd_scene format=4 uid="uid://53bbstpp63b5"]
+
+[ext_resource type="Texture2D" uid="uid://cnv24b5lvrvp6" path="res://ASSETS/sprites stuff one/balls.png" id="1_5hnph"]
+[ext_resource type="Texture2D" uid="uid://cvhe8ajlnywt4" path="res://ASSETS/sprites stuff one/tiles.png" id="2_cl0gj"]
+[ext_resource type="Texture2D" uid="uid://ddus4sq84rtnm" path="res://ASSETS/BG SHET/Grid.png" id="2_cuf1a"]
+[ext_resource type="Texture2D" uid="uid://mgvhsqi7qaml" path="res://ASSETS/sprites stuff one/redpongbig.png" id="3_cuf1a"]
+[ext_resource type="Script" uid="uid://ckjeyfxg2quj1" path="res://gametrial/Player1.cs" id="4_4jb2c"]
+[ext_resource type="FontFile" uid="uid://ihpgvqteylba" path="res://ASSETS/webfontkit-BoldPixels/boldpixels.ttf" id="5_5744b"]
+[ext_resource type="Texture2D" uid="uid://bnpfwqt0rvpn3" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Buttons/Button_White (8).png" id="6_pcu2y"]
+[ext_resource type="Texture2D" uid="uid://c27vm3op3tk51" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Buttons/Button_White_Outline (1).png" id="7_4jb2c"]
+[ext_resource type="Texture2D" uid="uid://cmngaw32hlxtd" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Icons/Icon_Dark (6).png" id="8_jf3xc"]
+[ext_resource type="Texture2D" uid="uid://dq2wde6djjn0v" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Icons/Icon_White (3).png" id="9_lvx6k"]
+[ext_resource type="Texture2D" uid="uid://bkt3alhs4kmre" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Icons/Icon_White (2).png" id="10_hnm3l"]
+[ext_resource type="Texture2D" uid="uid://cph0biohtql5r" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Icons/Icon_White (10).png" id="11_pnbgn"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_pcu2y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hnph"]
+texture = ExtResource("2_cl0gj")
+2:0/0 = 0
+3:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+4:0/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yurf1"]
+sources/1 = SubResource("TileSetAtlasSource_5hnph")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cl0gj"]
+texture = ExtResource("2_cl0gj")
+2:0/0 = 0
+3:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+5:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_w5nkp"]
+sources/0 = SubResource("TileSetAtlasSource_cl0gj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qsrb"]
+size = Vector2(20, 325.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8eud"]
+size = Vector2(19, 325)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwo52"]
+radius = 23.086792
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qtv4"]
+size = Vector2(23.25, 326)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc3j0"]
+size = Vector2(20, 326)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pkmu"]
+size = Vector2(824, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvlkk"]
+size = Vector2(822, 26)
+
+[node name="Game" type="Node2D" unique_id=1898676456]
+script = SubResource("CSharpScript_pcu2y")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1441879045]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_cuf1a")
+
+[node name="BOARD" type="Node2D" parent="." unique_id=434340766]
+position = Vector2(-32, -8)
+
+[node name="BoardTiles" type="TileMapLayer" parent="BOARD" unique_id=415043865]
+texture_filter = 1
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAD6//3/AQAEAAEAAAD6//7/AQAEAAEAAAD6////AQAEAAEAAAD6/wAAAQAEAAEAAAD6/wEAAQAEAAEAAAD6/wIAAQAEAAEAAAD7//3/AQAEAAEAAAD7//7/AQAEAAEAAAD7////AQAEAAEAAAD7/wAAAQAEAAEAAAD7/wEAAQAEAAEAAAD7/wIAAQAEAAEAAAD8//3/AQAEAAEAAAD8//7/AQAEAAEAAAD8////AQAEAAEAAAD8/wAAAQAEAAEAAAD8/wEAAQAEAAEAAAD8/wIAAQAEAAEAAAD9//3/AQAEAAEAAAD9//7/AQAEAAEAAAD9////AQAEAAEAAAD9/wAAAQAEAAEAAAD9/wEAAQAEAAEAAAD9/wIAAQAEAAEAAAD+//3/AQAEAAEAAAD+//7/AQAEAAEAAAD+////AQAEAAEAAAD+/wAAAQAEAAEAAAD+/wEAAQAEAAEAAAD+/wIAAQAEAAEAAAD///3/AQAEAAEAAAD///7/AQAEAAEAAAD/////AQAEAAEAAAD//wAAAQAEAAEAAAD//wEAAQAEAAEAAAD//wIAAQAEAAEAAAAAAP3/AQAEAAIAAAAAAP7/AQAEAAIAAAAAAP//AQAEAAIAAAAAAAAAAQAEAAIAAAAAAAEAAQAEAAIAAAAAAAIAAQAEAAIAAAABAP3/AQAEAAEAAAABAP7/AQAEAAEAAAABAP//AQAEAAEAAAABAAAAAQAEAAEAAAABAAEAAQAEAAEAAAABAAIAAQAEAAEAAAACAP3/AQAEAAEAAAACAP7/AQAEAAEAAAACAP//AQAEAAEAAAACAAAAAQAEAAEAAAACAAEAAQAEAAEAAAACAAIAAQAEAAEAAAADAP3/AQAEAAEAAAADAP7/AQAEAAEAAAADAP//AQAEAAEAAAADAAAAAQAEAAEAAAADAAEAAQAEAAEAAAADAAIAAQAEAAEAAAAEAP3/AQAEAAEAAAAEAP7/AQAEAAEAAAAEAP//AQAEAAEAAAAEAAAAAQAEAAEAAAAEAAEAAQAEAAEAAAAEAAIAAQAEAAEAAAAFAP3/AQAEAAEAAAAFAP7/AQAEAAEAAAAFAP//AQAEAAEAAAAFAAAAAQAEAAEAAAAFAAEAAQAEAAEAAAAFAAIAAQAEAAEAAAAGAP3/AQAEAAEAAAAGAP7/AQAEAAEAAAAGAP//AQAEAAEAAAAGAAAAAQAEAAEAAAAGAAEAAQAEAAEAAAAGAAIAAQAEAAEAAAA=")
+tile_set = SubResource("TileSet_yurf1")
+metadata/_edit_lock_ = true
+
+[node name="NET" type="Sprite2D" parent="BOARD" unique_id=2067012937]
+texture_filter = 1
+position = Vector2(32.999996, -3)
+scale = Vector2(-4, 7.086957)
+texture = ExtResource("2_cl0gj")
+region_enabled = true
+region_rect = Rect2(55, 2, 2, 46)
+metadata/_edit_lock_ = true
+
+[node name="BoardDetails" type="TileMapLayer" parent="BOARD" unique_id=703118592]
+texture_filter = 1
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAD6//3/AAAFAAAAAAD6//7/AAAGAAIAAHD6////AAAGAAIAAFD6/wAAAAAHAAIAAFD6/wEAAAAHAAIAAHD6/wIAAAAFAAIAAAD7//3/AAAGAAAAAAD7/wIAAAAGAAIAAAD8//3/AAAHAAIAACD8/wIAAAAHAAIAAAD9//3/AAAHAAIAADD9/wIAAAAHAAIAABD+//3/AAAGAAIAADD+/wIAAAAGAAIAABD///3/AAAGAAAAAAD//wIAAAAGAAIAAAAAAP3/AAABAAEAAAAAAAIAAAABAAIAAAABAP3/AAAHAAIAACABAAIAAAAHAAIAAAACAP3/AAAHAAIAADACAAIAAAAHAAIAABADAP3/AAAGAAAAABADAAIAAAAGAAIAABAEAP3/AAAGAAAAAAAEAAIAAAAGAAIAAAAFAP3/AAAHAAAAAAAFAAIAAAAHAAIAAAAGAP3/AAAIAAAAAAAGAP7/AAAGAAAAAHAGAP//AAAGAAAAAFAGAAAAAAAHAAAAAFAGAAEAAAAHAAAAAHAGAAIAAAAIAAIAAAA=")
+tile_set = SubResource("TileSet_w5nkp")
+metadata/_edit_lock_ = true
+
+[node name="Player1" type="CharacterBody2D" parent="." unique_id=1298036904]
+position = Vector2(-372, -11)
+script = ExtResource("4_4jb2c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1" unique_id=1902022004]
+position = Vector2(0, 3.375)
+shape = SubResource("RectangleShape2D_0qsrb")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player1" unique_id=437862785]
+texture_filter = 1
+scale = Vector2(2.9999852, 2.5735292)
+texture = ExtResource("3_cuf1a")
+metadata/_edit_lock_ = true
+
+[node name="AI" type="CharacterBody2D" parent="." unique_id=1308621041]
+position = Vector2(376, -10)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI" unique_id=1096473116]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_f8eud")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="AI" unique_id=951029458]
+texture_filter = 1
+scale = Vector2(2.9999852, 2.5735292)
+texture = ExtResource("3_cuf1a")
+metadata/_edit_lock_ = true
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=1792565136]
+slide_on_ceiling = false
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=291470535]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_5hnph")
+region_enabled = true
+region_rect = Rect2(4, 4, 8, 8)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1484407580]
+position = Vector2(2, 2)
+shape = SubResource("CircleShape2D_qwo52")
+metadata/_edit_lock_ = true
+
+[node name="LeftGoal" type="Area2D" parent="." unique_id=1141891061]
+
+[node name="LeftGoal" type="CollisionShape2D" parent="LeftGoal" unique_id=1231807361]
+position = Vector2(-400, -8)
+shape = SubResource("RectangleShape2D_5qtv4")
+metadata/_edit_lock_ = true
+
+[node name="RightGoal" type="Area2D" parent="." unique_id=1322394972]
+
+[node name="RightGoal" type="CollisionShape2D" parent="RightGoal" unique_id=356342857]
+position = Vector2(400, -8)
+shape = SubResource("RectangleShape2D_hc3j0")
+
+[node name="Wall horizontal" type="StaticBody2D" parent="." unique_id=1392776081]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall horizontal" unique_id=1283127615]
+position = Vector2(0, -184)
+shape = SubResource("RectangleShape2D_4pkmu")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Wall horizontal" unique_id=136089814]
+position = Vector2(0, 168)
+shape = SubResource("RectangleShape2D_mvlkk")
+metadata/_edit_lock_ = true
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1120870853]
+
+[node name="AiLabel" type="Label" parent="UI" unique_id=1207385088]
+anchors_preset = -1
+anchor_left = 0.19900002
+anchor_top = 0.49400002
+anchor_right = 0.19900002
+anchor_bottom = 0.49400002
+offset_left = -165.24802
+offset_top = -0.11199951
+offset_right = -0.24801636
+offset_bottom = 35.888
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_5744b")
+theme_override_font_sizes/font_size = 40
+text = "Player Ai"
+
+[node name="PlayerLabel" type="Label" parent="UI" unique_id=760552044]
+anchors_preset = -1
+anchor_left = -0.049000002
+anchor_top = 0.49400002
+anchor_right = -0.049000002
+anchor_bottom = 0.49400002
+offset_left = -151.552
+offset_top = -0.11199951
+offset_right = -3.5519981
+offset_bottom = 35.888
+theme_override_fonts/font = ExtResource("5_5744b")
+theme_override_font_sizes/font_size = 40
+text = "Player 1"
+
+[node name="Player 1 Score" type="Label" parent="UI" unique_id=1048510734]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = -0.13900001
+anchor_top = 0.38300002
+anchor_right = -0.13900001
+anchor_bottom = 0.38300002
+offset_left = 0.12805176
+offset_top = -0.18400574
+offset_right = 39.12805
+offset_bottom = 62.815994
+theme_override_fonts/font = ExtResource("5_5744b")
+theme_override_font_sizes/font_size = 70
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Player 2 Score" type="Label" parent="UI" unique_id=667720734]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.13800001
+anchor_top = 0.38300002
+anchor_right = 0.13800001
+anchor_bottom = 0.38300002
+offset_left = -38.976013
+offset_top = -0.18400574
+offset_right = 0.023986816
+offset_bottom = 62.815994
+theme_override_fonts/font = ExtResource("5_5744b")
+theme_override_font_sizes/font_size = 70
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="UI" unique_id=712325771]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.41700003
+anchor_top = -0.55600005
+anchor_right = 0.41700003
+anchor_bottom = -0.55600005
+offset_left = -0.3840332
+offset_top = 0.2880249
+offset_right = 95.61597
+offset_bottom = 99.288025
+texture_normal = ExtResource("6_pcu2y")
+texture_pressed = ExtResource("7_4jb2c")
+
+[node name="TextureRect" type="TextureRect" parent="UI/TextureButton" unique_id=1496391139]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14600001
+anchor_top = 0.141
+anchor_right = 0.14600001
+anchor_bottom = 0.141
+offset_left = -0.016000748
+offset_top = 0.040999413
+offset_right = 68.984
+offset_bottom = 63.041
+texture = ExtResource("8_jf3xc")
+expand_mode = 1
+
+[node name="PauseMenu" type="Control" parent="UI" unique_id=1418226669]
+layout_mode = 3
+anchor_left = -0.47900003
+anchor_top = -0.58000004
+anchor_right = 0.55600005
+anchor_bottom = 0.61700004
+offset_left = -8.191956
+offset_top = -8.159973
+offset_right = -0.51208496
+offset_bottom = 16.18396
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="UI/PauseMenu" unique_id=836647052]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.975
+anchor_top = -9.217
+anchor_right = 30.975002
+anchor_bottom = 14.087001
+offset_top = -0.009002686
+offset_right = -0.00012207031
+offset_bottom = -0.0010375977
+color = Color(0.078431375, 0.12941177, 0.26666668, 0.7490196)
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="HBoxContainer" parent="UI/PauseMenu" unique_id=106984298]
+z_as_relative = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 12.8
+anchor_top = -0.4347826
+anchor_right = 27.625
+anchor_bottom = 5.173913
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+metadata/_edit_use_anchors_ = true
+
+[node name="RestartButton" type="TextureButton" parent="UI/PauseMenu/VBoxContainer" unique_id=343588002]
+layout_mode = 2
+texture_normal = ExtResource("9_lvx6k")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="ResumeButton" type="TextureButton" parent="UI/PauseMenu/VBoxContainer" unique_id=46859561]
+layout_mode = 2
+texture_normal = ExtResource("10_hnm3l")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="ExitButton" type="TextureButton" parent="UI/PauseMenu/VBoxContainer" unique_id=38327909]
+layout_mode = 2
+texture_normal = ExtResource("11_pnbgn")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=74170006]
+position = Vector2(1, 0)
+zoom = Vector2(0.6, 0.6)
+metadata/_edit_lock_ = true
