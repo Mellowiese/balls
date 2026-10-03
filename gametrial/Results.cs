@@ -4,16 +4,16 @@ public partial class Results : Control
 {
     private Label _winnerLabel;
     private Label _finalScore;
-    private Button _mainMenuButton;
-    private Button _retryButton;
+    private BaseButton _mainMenuButton;
+    private BaseButton _retryButton;
 
     public override void _Ready()
     {
         // Hook up nodes (must match exact node names in results.tscn)
         _winnerLabel    = GetNode<Label>("WinnerLabel");
         _finalScore     = GetNode<Label>("FinalScore");
-        _mainMenuButton = GetNode<Button>("MainMenuButton");
-        _retryButton    = GetNode<Button>("RetryButton");
+        _mainMenuButton = GetNode<BaseButton>("MainMenuButton");
+        _retryButton    = GetNode<BaseButton>("RetryButton");
 
         // Pull scores from the singleton
         _winnerLabel.Text = GameData.Instance.Winner + " Wins!";

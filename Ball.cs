@@ -103,6 +103,9 @@ public partial class Ball : CharacterBody2D
 	/// </summary>
 	public async void ResetBall(int serveDirection)
 	{
+		if(!IsInsideTree())
+			return;
+
 		_launched = false;
 		Velocity = Vector2.Zero;
 		GlobalPosition = _startPosition;

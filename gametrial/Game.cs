@@ -42,13 +42,13 @@ public partial class Game : Node2D
 		}
 		else if (GameData.Instance.Player2Score >= WIN_SCORE)
 		{
-			GameData.Instance.Winner = "Player 2";
+			GameData.Instance.Winner = "CPU";
 			GoToResults();
 		}
 	}
 
 	private void GoToResults()
 	{
-		GetTree().ChangeSceneToFile("res://gametrial/results.tscn");
+		GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://gametrial/results.tscn");
 	}
 }

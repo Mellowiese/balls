@@ -37,6 +37,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_f0mmb")
 theme_override_font_sizes/font_size = 100
 text = "Player 1 Wins!"
+horizontal_alignment = 1
 
 [node name="FinalScore" type="Label" parent="." unique_id=1552719975]
 layout_mode = 0

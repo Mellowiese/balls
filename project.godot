@@ -22,7 +22,6 @@ GameData="*uid://crvtv2hqp1078"
 [display]
 
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [dotnet]
 
