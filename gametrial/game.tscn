@@ -1,19 +1,19 @@
 [gd_scene format=4 uid="uid://53bbstpp63b5"]
 
+[ext_resource type="Script" uid="uid://pwqe07vkgam6" path="res://gametrial/Game.cs" id="1_4jb2c"]
 [ext_resource type="Texture2D" uid="uid://cnv24b5lvrvp6" path="res://ASSETS/sprites stuff one/balls.png" id="1_5hnph"]
 [ext_resource type="Texture2D" uid="uid://cvhe8ajlnywt4" path="res://ASSETS/sprites stuff one/tiles.png" id="2_cl0gj"]
 [ext_resource type="Texture2D" uid="uid://ddus4sq84rtnm" path="res://ASSETS/BG SHET/Grid.png" id="2_cuf1a"]
 [ext_resource type="Texture2D" uid="uid://mgvhsqi7qaml" path="res://ASSETS/sprites stuff one/redpongbig.png" id="3_cuf1a"]
 [ext_resource type="Script" uid="uid://ckjeyfxg2quj1" path="res://gametrial/Player1.cs" id="4_4jb2c"]
 [ext_resource type="FontFile" uid="uid://ihpgvqteylba" path="res://ASSETS/webfontkit-BoldPixels/boldpixels.ttf" id="5_5744b"]
+[ext_resource type="Script" uid="uid://c0g01pejct5dg" path="res://Ball.cs" id="6_jf3xc"]
 [ext_resource type="Texture2D" uid="uid://bnpfwqt0rvpn3" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Buttons/Button_White (8).png" id="6_pcu2y"]
 [ext_resource type="Texture2D" uid="uid://c27vm3op3tk51" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Buttons/Button_White_Outline (1).png" id="7_4jb2c"]
 [ext_resource type="Texture2D" uid="uid://cmngaw32hlxtd" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Icons/Icon_Dark (6).png" id="8_jf3xc"]
 [ext_resource type="Texture2D" uid="uid://dq2wde6djjn0v" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Icons/Icon_White (3).png" id="9_lvx6k"]
 [ext_resource type="Texture2D" uid="uid://bkt3alhs4kmre" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Icons/Icon_White (2).png" id="10_hnm3l"]
 [ext_resource type="Texture2D" uid="uid://cph0biohtql5r" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Icons/Icon_White (10).png" id="11_pnbgn"]
-
-[sub_resource type="CSharpScript" id="CSharpScript_pcu2y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hnph"]
 texture = ExtResource("2_cl0gj")
@@ -74,11 +74,11 @@ texture = ExtResource("2_cl0gj")
 [sub_resource type="TileSet" id="TileSet_w5nkp"]
 sources/0 = SubResource("TileSetAtlasSource_cl0gj")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qsrb"]
-size = Vector2(20, 325.25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf3xc"]
+size = Vector2(24, 88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8eud"]
-size = Vector2(19, 325)
+size = Vector2(24, 88)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwo52"]
 radius = 23.086792
@@ -96,7 +96,7 @@ size = Vector2(824, 27)
 size = Vector2(822, 26)
 
 [node name="Game" type="Node2D" unique_id=1898676456]
-script = SubResource("CSharpScript_pcu2y")
+script = ExtResource("1_4jb2c")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=1441879045]
 texture_filter = 1
@@ -131,12 +131,12 @@ metadata/_edit_lock_ = true
 
 [node name="Player1" type="CharacterBody2D" parent="." unique_id=1298036904]
 position = Vector2(-372, -11)
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("4_4jb2c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1" unique_id=1902022004]
-position = Vector2(0, 3.375)
-shape = SubResource("RectangleShape2D_0qsrb")
-metadata/_edit_lock_ = true
+shape = SubResource("RectangleShape2D_jf3xc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player1" unique_id=437862785]
 texture_filter = 1
@@ -146,12 +146,12 @@ metadata/_edit_lock_ = true
 
 [node name="AI" type="CharacterBody2D" parent="." unique_id=1308621041]
 position = Vector2(376, -10)
+collision_layer = 2
+collision_mask = 0
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AI" unique_id=1096473116]
-position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_f8eud")
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="AI" unique_id=951029458]
 texture_filter = 1
@@ -160,7 +160,9 @@ texture = ExtResource("3_cuf1a")
 metadata/_edit_lock_ = true
 
 [node name="Ball" type="CharacterBody2D" parent="." unique_id=1792565136]
+collision_mask = 3
 slide_on_ceiling = false
+script = ExtResource("6_jf3xc")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=291470535]

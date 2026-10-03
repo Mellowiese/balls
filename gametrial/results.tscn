@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bnhdw0qxvomdm"]
 
+[ext_resource type="Script" uid="uid://m3lhcr724elr" path="res://gametrial/Results.cs" id="1_f0mmb"]
 [ext_resource type="Texture2D" uid="uid://cmwrun1ro8lex" path="res://ASSETS/BG SHET/Grid3.png" id="1_ika0c"]
 [ext_resource type="FontFile" uid="uid://ihpgvqteylba" path="res://ASSETS/webfontkit-BoldPixels/boldpixels.ttf" id="2_f0mmb"]
 [ext_resource type="Texture2D" uid="uid://b24spmkbghw45" path="res://ASSETS/PixUIAssetPack-By@CamTatz/Buttons/Button_White (4).png" id="3_4ee84"]
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f0mmb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=798734189]
 position = Vector2(578, 325)
@@ -35,6 +37,11 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_f0mmb")
 theme_override_font_sizes/font_size = 100
 text = "Player 1 Wins!"
+
+[node name="FinalScore" type="Label" parent="." unique_id=1552719975]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="MainMenuButton" type="TextureButton" parent="." unique_id=991447286]
 layout_mode = 0

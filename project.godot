@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="New Game Project"
+run/main_scene="uid://bkvgl7d0b38fo"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameData="*uid://crvtv2hqp1078"
 
 [display]
 
